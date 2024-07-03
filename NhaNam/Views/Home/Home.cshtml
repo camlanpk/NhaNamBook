@@ -1,0 +1,17 @@
+﻿@model NhaNam.Models.ProDetail
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<link href="~/Content/StyleDetail.css" rel="stylesheet" />
+<div class="container">
+
+    <div style=" margin: 0 auto;text-align:center;">
+        <a href="http://nhanam.com.vn/combo-sach-null/null"> <img src="~/Content/Images/anh1.jpg" style="width: 1000px; margin-top: 20px;" /></a>
+    </div>
+
+    @Html.Action("MenuProduct", "Home")
+</div>
+

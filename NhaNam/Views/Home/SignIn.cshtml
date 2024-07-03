@@ -1,0 +1,64 @@
+﻿@model NhaNam.Models.Customer
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<link href="~/Content/StyleAccount.css" rel="stylesheet" />
+<script src="~/Scripts/jsSigninup.js"></script>
+
+<div class="bookdetailwrap">
+    <form id="form1-fieldset" runat="server" align-content="center" style=" color: black">
+        <div id="basicInfo" style="width:auto; height:auto; background-color:whitesmoke">
+            <div class="a">
+                <h2> ĐĂNG NHẬP </h2>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <br />
+                <input type="email" id="email" onkeydown="if(Event.keyCode === 13) {Event.preventDefault(); document.getElementById('password').focus();}" required>
+            </div>
+            <br />
+            <br />
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <br />
+                <input type="password" id="password" onkeydown="if (Event.keyCode === 13) {Event.preventDefault(); document.getElementById('submit').click();}" required>
+            </div>
+            <br />
+            <br />
+            <input type="checkbox" /> Ghi nhớ
+            <br />
+            <br />
+            <button type="submit" id="submit" style="padding: 5px 10px; color: white; background-color: forestgreen">
+                    Đăng nhập
+            </button>
+            <br />
+            Chưa có tài khoản? Hãy
+            <button type="submit" id="signup" style="padding: 5px 10px; color: white; background-color: forestgreen" href="@Url.Content("~/Home/SignUp")">
+                    Đăng kí
+            </button>
+            hoặc
+            <button type="button" href="https://www.facebook.com" style="color: white; background: linear-gradient(#476fc2,#314f8e); font-weight: bold; border-radius: 5px; padding: 6px;">
+                Đăng nhập qua Facebook
+            </button>
+            <br />
+            <br />
+            <br />
+            <fieldset id="basicInfo" style="border: 1px solid silver; margin: 0 2px; margin-top: 0px; padding: .35em .625em .75em;">
+                <legend>
+                    Quên mật khẩu?
+                </legend>
+                <br />
+                <label for="email">Email:</label>
+                <br />
+                <input type="email" id="email" onkeydown="if (Event.keyCode === 13) { Event.preventDefault(); document.getElementById('password').focus(); }" required/>
+                <br />
+                <br />
+                <button type="button" style="padding: 5px 10px; color: white; background-color: forestgreen">
+                    Tìm lại mật khẩu
+                </button>
+            </fieldset>
+        </div>
+    </form>
+</div>

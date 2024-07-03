@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NhaNam.Models.ProDetail>
+
+<link href="~/Content/StyleDetail.css" rel="stylesheet" />
+<script src="~/Scripts/NhaNam.js"></script>
+
+<div class="bookdetailblock">
+    <h1>Có thể bạn quan tâm</h1>
+    <article>
+        <div class="bookslider">
+            <div style="display: block; text-align: start; float: none; position: relative; inset: auto; z-index: auto; width: 900px; height: 210px; margin: 0px; overflow: hidden;">
+                <ul class="clearfix bookP" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 4500px; height: 210px;list-style:none">
+                    @foreach (var item in Model)
+                    {
+                        <li class="bookP">
+                            <img src="@Url.Content(item.Product.ProImage)" style=" width: 130px; height: 190px;" />
+                        </li>
+                    }
+                    @*<li class="bookP">
+                            <img src="~/Content/Images/book3.jpg" style=" width: 130px; height: 190px;" />
+                        </li>
+                        <li class="bookP">
+                            <img src="~/Content/Images/book4.jpg" style=" width: 130px; height: 190px;" />
+                        </li>
+                        <li class="bookP">
+                            <img src="~/Content/Images/book5.jpg" style=" width: 130px; height: 190px;" />
+                        </li>
+                        <li class="bookP">
+                            <img src="~/Content/Images/book6.jpg" style=" width: 130px; height: 190px;" />
+                        </li>
+                        <li class="bookP">
+                            <img src="~/Content/Images/book7.jpg" style=" width: 130px; height: 190px;" />
+                        </li>*@
+
+                </ul>
+            </div>
+            <a class="next" href="#" style="display:block"></a>
+            <a class="prev" href="#" style="display:block"></a>
+
+        </div>
+    </article>
+</div>

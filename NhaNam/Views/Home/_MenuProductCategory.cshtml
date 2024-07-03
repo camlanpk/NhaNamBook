@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NhaNam.Models.ProDetail>
+@using System.Collections;
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<link href="~/Content/StyleDetail.css" rel="stylesheet" />
+<div class="container">
+    @foreach (var item in Model)
+    {
+        if (item.Product.Category.NameCate == "Sách bán chạy")
+        {
+        <h1 class="pagetitle">
+            <a href="@Url.Action("MenuProduct", "Home", new { id = item.Product.Category.CatID })">
+                @item.Product.Category.NameCate
+            </a>
+        </h1>
+        <ul class="listbookP clearfix">
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail", "Home", new { id = item.ProDeID })" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        </ul>
+        }
+    }
+    </div>
+
+

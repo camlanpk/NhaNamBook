@@ -1,0 +1,24 @@
+﻿@model NhaNam.Models.Supplier
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN NHÀ XUẤT BẢN</h2>
+<div>
+    <hr />
+    <div>
+        <div class="col-sm-4">
+            <h1>@Html.DisplayFor(model => model.SupName)</h1>
+            @Html.DisplayFor(model => model.Address)
+        </div>
+        <div class="col-sm-8">
+            <h1>DANH SÁCH SẢN PHẨM CUNG CẤP</h1>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

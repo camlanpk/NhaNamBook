@@ -1,0 +1,57 @@
+﻿@model NhaNam.Models.Order
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>QUẢN LÝ ĐƠN HÀNG</h2>
+<h3 class="text-danger bg-warning">Bạn thực sự muốn xóa?</h3>
+<hr />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressDeliverry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressDeliverry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CusPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CusPhone)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Xóa" class="btn btn-primary" />
+    @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+</div>
+    }
+</div>

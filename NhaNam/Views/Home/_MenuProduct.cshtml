@@ -1,0 +1,351 @@
+﻿@model IEnumerable<NhaNam.Models.ProDetail>
+
+
+<h1 class="pagetitle">
+    @*<a href="@Url.Action("MenuProductCategory", "Home", new { id = item.Product.Category.CatID })">*@
+    <a href="~/Views/Home/Product.cshtml">
+        SÁCH MỚI - TÁI BẢN
+    </a>
+</h1>
+
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+        <li class="bookP">
+            <a class="image" href="@Url.Action("ProDetail", "Home", new { id = item.ProDeID })" title="@item.Product.ProName">
+                <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+            </a>
+            <div class="popup">
+                <h1 class="name">
+                    <a>@item.Product.ProName</a>
+                </h1>
+                <div class="description">
+                    <ul>
+                        <li>Số trang: @item.PageCount</li>
+                        <li>Kích thước:@item.Size cm</li>
+                        <li>Ngày phát hành: @item.ReleaseDate</li>
+                    </ul>
+                </div>
+                <p class="price">
+                    @item.UnitPrice đ
+                    <span class="old">@item.OldPrice đ</span>
+                </p>
+                <a class="addtocart">Thêm vào giỏ hàng</a>
+                <a class="buynow">Mua ngay</a>
+            </div>
+        </li>
+    }
+</ul>
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Sách bán chạy
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Sách bán chạy")
+        {
+            @*<h1 class="pagetitle">
+                    <a href="@Url.Action("MenuProductCategory", "Home", new { id = item.Product.Category.CatID })">
+                        @item.Product.Category.NameCate
+                    </a>
+                </h1>*@
+
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail", "Home", new { id = item.ProDeID })" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Văn học Việt Nam
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Văn học Việt Nam")
+        {
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail","Home", new {id=item.ProDeID})" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Văn học nước ngoài
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Văn học nước ngoài")
+        {
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail","Home", new {id=item.ProDeID})" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Thiếu nhi
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Thiếu nhi")
+        {
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail","Home", new {id=item.ProDeID})" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+
+</ul>
+
+@*<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Thời sự - Chính trị
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+        if (item.Product.Category.NameCate == "Thời sự - Chính trị")
+        {
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail","Home", new {id=item.ProDeID})" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+</ul>*@
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Khoa học tự nhiên - Nhân văn
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Khoa học tự nhiên - Nhân văn")
+        {
+            <li class="bookP">
+                <a class="image" href="@Url.Action("ProDetail","Home", new {id=item.ProDeID})" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+</ul>
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Tham khảo
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Tham khảo")
+        {
+            <li class="bookP">
+                <a class="image" href="/Views/Home/Detail.cshtml" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+</ul>
+
+<h1 class="pagetitle">
+    <a href="~/Views/Home/Product.cshtml">
+        Giảm giá đặc biệt
+    </a>
+</h1>
+<ul class="listbookP clearfix">
+    @foreach (var item in Model)
+    {
+
+        if (item.Product.Category.NameCate == "Giảm giá đặc biệt")
+        {
+            <li class="bookP">
+                <a class="image" href="/Views/Home/Detail.cshtml" title="@item.Product.ProName">
+                    <img class="ProImg" src="@Url.Content(item.Product.ProImage)" />
+                </a>
+                <div class="popup">
+                    <h1 class="name">
+                        <a>@item.Product.ProName</a>
+                    </h1>
+                    <div class="description">
+                        <ul>
+                            <li>Số trang: @item.PageCount</li>
+                            <li>Kích thước:@item.Size cm</li>
+                            <li>Ngày phát hành: @item.ReleaseDate</li>
+                        </ul>
+                    </div>
+                    <p class="price">
+                        @item.UnitPrice đ
+                        <span class="old">@item.OldPrice đ</span>
+                    </p>
+                    <a class="addtocart">Thêm vào giỏ hàng</a>
+                    <a class="buynow">Mua ngay</a>
+                </div>
+            </li>
+        }
+    }
+</ul>
+
